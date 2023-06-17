@@ -1,34 +1,69 @@
 {
     "cs": {
+        "base": {
+            "name": "Název",
+            "submit": "Uložit",
+            "actions": "Akce",
+            "edit": "Editace",
+            "delete": "Smazat",
+            "confirm": "Jsi si jistý?"
+        },
         "nav": {
             "login": "Přihlášení",
             "register": "Registrace",
-            "dashboard": "Dashboard",
+            "dashboard": "Přehled",
+            "medicine": "Léky",
+            "logout": "Odhlášení",
+            "profile": "Profil",
             "theme": {
                 "light": "Světlý",
                 "dark": "Tmavý",
                 "system": "Systémový"
-            },
-            "facts": [
-                "10 Fascinujících faktů o diabetu, které byste měli znát",
-                "Diabetes je celosvětově rozšířené onemocnění: Diabetes postihuje přibližně 463 milionů lidí po celém světě a tento počet se očekává, že v příštích letech ještě vzroste.",
-                "Typ 1 versus Typ 2: Existují dva hlavní typy diabetu. Typ 1 je autoimunitní onemocnění, při kterém tělo přestává produkovat inzulin. Naopak Typ 2 je způsoben nedostatečným účinkem inzulinu nebo jeho nedostatkem.",
-                "Diabetem trpí i zvířata: Diabetes není omezen pouze na lidi. Také psi, kočky a dokonce i koně mohou být postiženi touto chorobou.",
-                "Genetické predispozice: Máte vyšší riziko vzniku diabetu, pokud máte blízkého příbuzného (rodiče nebo sourozence), který trpí touto chorobou. Genetika hraje důležitou roli v rozvoji diabetu.",
-                "Inzulín nevyléčí diabetes: Inzulín je klíčový při léčbě diabetu, ale neexistuje zatím žádný lék, který by tuto nemoc úplně vyléčil. Pacienti s diabetem musí pravidelně kontrolovat hladinu cukru v krvi a užívat inzulín či jiné léky.",
-                "Komplikace diabetu: Nesprávně řízený diabetes může způsobovat různé komplikace, jako jsou problémy s očima, ledvinami, srdcem, cévami a nervovým systémem. Pravidelná péče a dodržování zdravého životního stylu je proto klíčová.",
-                "Diabetes a obezita: Obezita je jedním z hlavních rizikových faktorů pro rozvoj diabetu Typu 2. Udržování zdravé tělesné hmotnosti a aktivní životní styl jsou proto důležité při prevenci této formy diabetu.",
-                "Glykemický index: Glykemický index (GI) je ukazatel, který měří, jak rychle se sacharidy obsažené ve stravě mění na glukózu v krvi. Diabetici se často řídí potravinami s nízkým GI, aby udrželi stabilní hladinu cukru v krvi.",
-                "Diabetes a sport: Fyzická aktivita má pro diabetiky mnoho výhod. Pomáhá snižovat hladinu cukru v krvi, zlepšuje citlivost na inzulín a přispívá k celkovému zdraví a pohodě.",
-                "Prevence diabetu: Životní styl hraje důležitou roli v prevenci diabetu Typu 2. Dodržování zdravé stravy, pravidelná fyzická aktivita a udržování zdravé tělesné hmotnosti jsou klíčové faktory pro snížení rizika vzniku diabetu."
-            ]
+            }
+        },
+        "facts": [
+            "10 Fascinujících faktů o diabetu, které byste měli znát",
+            "Diabetes je celosvětově rozšířené onemocnění: Diabetes postihuje přibližně 463 milionů lidí po celém světě a tento počet se očekává, že v příštích letech ještě vzroste.",
+            "Typ 1 versus Typ 2: Existují dva hlavní typy diabetu. Typ 1 je autoimunitní onemocnění, při kterém tělo přestává produkovat inzulin. Naopak Typ 2 je způsoben nedostatečným účinkem inzulinu nebo jeho nedostatkem.",
+            "Diabetem trpí i zvířata: Diabetes není omezen pouze na lidi. Také psi, kočky a dokonce i koně mohou být postiženi touto chorobou.",
+            "Genetické predispozice: Máte vyšší riziko vzniku diabetu, pokud máte blízkého příbuzného (rodiče nebo sourozence), který trpí touto chorobou. Genetika hraje důležitou roli v rozvoji diabetu.",
+            "Inzulín nevyléčí diabetes: Inzulín je klíčový při léčbě diabetu, ale neexistuje zatím žádný lék, který by tuto nemoc úplně vyléčil. Pacienti s diabetem musí pravidelně kontrolovat hladinu cukru v krvi a užívat inzulín či jiné léky.",
+            "Komplikace diabetu: Nesprávně řízený diabetes může způsobovat různé komplikace, jako jsou problémy s očima, ledvinami, srdcem, cévami a nervovým systémem. Pravidelná péče a dodržování zdravého životního stylu je proto klíčová.",
+            "Diabetes a obezita: Obezita je jedním z hlavních rizikových faktorů pro rozvoj diabetu Typu 2. Udržování zdravé tělesné hmotnosti a aktivní životní styl jsou proto důležité při prevenci této formy diabetu.",
+            "Glykemický index: Glykemický index (GI) je ukazatel, který měří, jak rychle se sacharidy obsažené ve stravě mění na glukózu v krvi. Diabetici se často řídí potravinami s nízkým GI, aby udrželi stabilní hladinu cukru v krvi.",
+            "Diabetes a sport: Fyzická aktivita má pro diabetiky mnoho výhod. Pomáhá snižovat hladinu cukru v krvi, zlepšuje citlivost na inzulín a přispívá k celkovému zdraví a pohodě.",
+            "Prevence diabetu: Životní styl hraje důležitou roli v prevenci diabetu Typu 2. Dodržování zdravé stravy, pravidelná fyzická aktivita a udržování zdravé tělesné hmotnosti jsou klíčové faktory pro snížení rizika vzniku diabetu."
+        ],
+        "grid": {
+            "per_page": "Záznamů na stránku",
+            "showing": "Zobrazuji",
+            "of": "až",
+            "total": "celkem",
+            "from": "z",
+            "previous": "Předchozí",
+            "next": "Další"
+        },
+        "medicine": {
+            "new": "Nový lék",
+            "edit": "Editace léku"
         }
     },
     "en": {
+        "base": {
+            "name": "Name",
+            "submit": "Submit",
+            "actions": "Actions",
+            "edit": "Edit",
+            "delete": "Delete",
+            "confirm": "Are you sure?"
+        },
         "nav": {
             "login": "Login",
             "register": "Register",
             "dashboard": "Dashboard",
+            "medicine": "Medicine",
+            "logout": "Logout",
+            "profile": "Profile",
             "theme": {
                 "light": "Light",
                 "dark": "Dark",
@@ -47,6 +82,19 @@
             "Glycemic index: The glycemic index (GI) is a measure that indicates how quickly the carbohydrates in food are converted into glucose in the blood. Diabetics often follow low-GI foods to maintain stable blood sugar levels.",
             "Diabetes and exercise: Physical activity has numerous benefits for individuals with diabetes. It helps to lower blood sugar levels, improves insulin sensitivity, and contributes to overall health and well-being.",
             "Diabetes prevention: Lifestyle plays a crucial role in preventing Type 2 diabetes. Adopting a healthy diet, engaging in regular physical activity, and maintaining a healthy body weight are key factors in reducing the risk of developing diabetes."
-        ]
+        ],
+        "grid": {
+            "per_page": "Records per page",
+            "showing": "Showing",
+            "of": "of",
+            "total": "total",
+            "from": "from",
+            "previous": "Previous",
+            "next": "Next"
+        },
+        "medicine": {
+            "new": "New medicine",
+            "edit": "Edit medicine"
+        }
     }
 }

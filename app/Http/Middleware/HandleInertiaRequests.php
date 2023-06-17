@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 
@@ -31,6 +32,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
+            'locale' => session('locale', app()->getLocale()),
             'auth' => [
                 'user' => $request->user(),
             ],
@@ -39,6 +41,9 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
+            'alerts' => [
+                'success' => Session::get('success')
+            ]
         ]);
     }
 }
