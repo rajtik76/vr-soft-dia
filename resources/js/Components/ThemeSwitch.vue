@@ -59,7 +59,7 @@ function applyModeChange(): void {
     }
 }
 
-function clickOutside(event) {
+function clickOutside(event: Event) {
     if (!event.composedPath().includes(menuButton.value)) {
         displayMenu.value = false
     }
