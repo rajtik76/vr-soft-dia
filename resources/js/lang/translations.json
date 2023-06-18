@@ -59,6 +59,17 @@
             "after_lunch": "Po obědě",
             "before_dinner": "Před večeří",
             "after_dinner": "Po večeři"
+        },
+        "dashboard": {
+            "no_data_found": "Nebyla nalezena žádná data!",
+            "widgets": {
+                "high_low_readings": {
+                    "title": "Minima a maxima",
+                    "low": "Nejnižší hodnota",
+                    "high": "Nejvyšší hodnota"
+                },
+                "graph": "posledních 7 hodnot měření"
+            }
         }
     },
     "en": {
@@ -121,6 +132,17 @@
             "after_lunch": "After lunch",
             "before_dinner": "Before dinner",
             "after_dinner": "After dinner"
+        },
+        "dashboard": {
+            "no_data_found": "No data found !",
+            "widgets": {
+                "high_low_readings": {
+                    "title": "High and Low readings",
+                    "low": "Lowest value",
+                    "high": "Highest value"
+                },
+                "graph": "last 7 blood sugar readings"
+            }
         }
     }
 }

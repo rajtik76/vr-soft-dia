@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BloodSugarReadingController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Grid\BloodSugarReadingsController;
 use App\Http\Controllers\Grid\MedicinesController;
 use App\Http\Controllers\LocaleSwitchController;
@@ -30,9 +31,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', DashboardController::class)->middleware(['auth', 'verified'])->name('dashboard');
 
 // Locale switch
 Route::post('/locale-switch/{locale}', LocaleSwitchController::class)->name('locale-switch');
