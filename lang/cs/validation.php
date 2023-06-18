@@ -164,6 +164,9 @@ return [
     */
 
     'custom' => [
+        'before_breakfast' => [
+            'sum' => 'Alespoň jedna hodnota musí být větší než 0',
+        ],
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BloodSugarReadingController;
+use App\Http\Controllers\Grid\BloodSugarReadingsController;
+use App\Http\Controllers\Grid\MedicinesController;
 use App\Http\Controllers\LocaleSwitchController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ProfileController;
@@ -40,9 +43,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/medicine', MedicineController::class)->except(['show']);
+    Route::resource('/bloodSugarReading', BloodSugarReadingController::class)->except(['show']);
 
     Route::prefix('/grid')->name('grid.')->group(function () {
-        Route::post('/medicine', \App\Http\Controllers\Grid\MedicineController::class)->name('medicine');
+        Route::post('/medicines', MedicinesController::class)->name('medicines');
+        Route::post('/bloodSugarReadings', BloodSugarReadingsController::class)->name('bloodSugarReadings');
     });
 });
 

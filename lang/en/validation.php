@@ -166,6 +166,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'before_breakfast' => [
+            'sum' => 'At least one value must be greater than 0.',
+        ],
     ],
 
     /*

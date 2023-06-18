@@ -37,6 +37,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('medicine.index')" :active="$page.component.startsWith('Medicine/')">
                                     {{ $t('nav.medicine') }}
                                 </NavLink>
+                                <NavLink :href="route('bloodSugarReading.index')" :active="$page.component.startsWith('BloodSugarReading/')">
+                                    {{ $t('nav.blood_sugar_reading') }}
+                                </NavLink>
                             </div>
                         </div>
 

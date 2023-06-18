@@ -20,7 +20,13 @@ const grid = ref<InstanceType<typeof AppGrid>>()
 
 function medicineColumns(): Array<GridColumn> {
     return [
-        {name: 'name', label: t('base.name')},
+        {name: 'date', label: t('blood_sugar_reading.date'), sortable: true, default: {sort: "desc"}},
+        {name: 'before_breakfast', label: t('blood_sugar_reading.before_breakfast')},
+        {name: 'after_breakfast', label: t('blood_sugar_reading.after_breakfast')},
+        {name: 'before_lunch', label: t('blood_sugar_reading.before_lunch')},
+        {name: 'after_lunch', label: t('blood_sugar_reading.after_lunch')},
+        {name: 'before_dinner', label: t('blood_sugar_reading.before_dinner')},
+        {name: 'after_dinner', label: t('blood_sugar_reading.after_dinner')},
         {name: 'actions', label: t('base.actions')},
     ]
 }
@@ -35,11 +41,11 @@ function actionButtons(): Array<GridActionButton> {
 function handleActionButtonClick(action: GridButtonsActionEnum, id: number): void {
     switch (action) {
         case GridButtonsActionEnum.Edit:
-            router.get(route('medicine.edit', {medicine: id}))
+            router.get(route('bloodSugarReading.edit', {bloodSugarReading: id}))
             break
         case GridButtonsActionEnum.Delete:
             if (confirm(t('base.confirm'))) {
-                router.delete(route('medicine.destroy', {medicine: id}), {
+                router.delete(route('bloodSugarReading.destroy', {bloodSugarReading: id}), {
                     onSuccess: () => grid.value?.updateGrid(),
                     preserveScroll: true
                 })
@@ -52,12 +58,15 @@ function handleActionButtonClick(action: GridButtonsActionEnum, id: number): voi
 </script>
 
 <template>
-    <AppPageContent :title="$t('nav.medicine')">
+    <AppPageContent :title="$t('nav.blood_sugar_reading')">
         <div class="text-center">
-            <PrimaryButton @click="router.get(route('medicine.create'))">{{ $t('medicine.new') }}</PrimaryButton>
+            <PrimaryButton @click="router.get(route('bloodSugarReading.create'))">{{
+                    $t('blood_sugar_reading.new')
+                }}
+            </PrimaryButton>
         </div>
         <div class="mt-8">
-            <AppGrid :columns="medicineColumns()" :grid-url="route('grid.medicines')" ref="grid">
+            <AppGrid ref="grid" :columns="medicineColumns()" :grid-url="route('grid.bloodSugarReadings')">
                 <template #actions="{ row }: { row: MedicineResource }">
                     <AppGridActions :buttons="actionButtons()" @click="handleActionButtonClick($event, row.id)"/>
                 </template>

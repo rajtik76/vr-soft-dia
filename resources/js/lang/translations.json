@@ -3,6 +3,7 @@
         "base": {
             "name": "Název",
             "submit": "Uložit",
+            "back": "Zpět",
             "actions": "Akce",
             "edit": "Editace",
             "delete": "Smazat",
@@ -13,6 +14,7 @@
             "register": "Registrace",
             "dashboard": "Přehled",
             "medicine": "Léky",
+            "blood_sugar_reading": "Měření",
             "logout": "Odhlášení",
             "profile": "Profil",
             "theme": {
@@ -46,12 +48,24 @@
         "medicine": {
             "new": "Nový lék",
             "edit": "Editace léku"
+        },
+        "blood_sugar_reading": {
+            "new": "Nové měření",
+            "edit": "Editace měření",
+            "date": "Datum",
+            "before_breakfast": "Před snídaní",
+            "after_breakfast": "Po snídaní",
+            "before_lunch": "Před obědem",
+            "after_lunch": "Po obědě",
+            "before_dinner": "Před večeří",
+            "after_dinner": "Po večeři"
         }
     },
     "en": {
         "base": {
             "name": "Name",
             "submit": "Submit",
+            "back": "Back",
             "actions": "Actions",
             "edit": "Edit",
             "delete": "Delete",
@@ -62,6 +76,7 @@
             "register": "Register",
             "dashboard": "Dashboard",
             "medicine": "Medicine",
+            "blood_sugar_reading": "Readings",
             "logout": "Logout",
             "profile": "Profile",
             "theme": {
@@ -95,6 +110,17 @@
         "medicine": {
             "new": "New medicine",
             "edit": "Edit medicine"
+        },
+        "blood_sugar_reading": {
+            "new": "New reading",
+            "edit": "Edit reading",
+            "date": "Date",
+            "before_breakfast": "Before breakfast",
+            "after_breakfast": "After breakfast",
+            "before_lunch": "Before lunch",
+            "after_lunch": "After lunch",
+            "before_dinner": "Before dinner",
+            "after_dinner": "After dinner"
         }
     }
 }

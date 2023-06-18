@@ -51,7 +51,8 @@ class MedicineController extends Controller
         $this->authorize('delete', $medicine);
 
         $medicineName = $medicine->name;
-//        $medicine->delete();
+
+        $medicine->delete();
 
         return to_route('medicine.index')->withSuccess(trans('alert.medicine.deleted', ['medicine' => $medicineName]));
     }

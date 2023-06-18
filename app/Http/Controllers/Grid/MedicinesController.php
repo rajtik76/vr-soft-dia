@@ -8,7 +8,7 @@ use App\Models\Medicine;
 use App\Services\GridHandler;
 use Illuminate\Http\JsonResponse;
 
-class MedicineController extends Controller
+class MedicinesController extends Controller
 {
     public function __invoke(GridHandler $handler): JsonResponse
     {
