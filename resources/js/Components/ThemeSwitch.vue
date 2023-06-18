@@ -11,9 +11,20 @@ enum ThemeEnum {
     System = 'system',
 }
 
+const menuButton = ref()
 const theme = ref<string>(ThemeEnum.Light)
 const displayMenu = ref<boolean>(false)
 
+// watch for display menu
+watch(displayMenu, (displayed) => {
+    if (displayed) {
+        window.addEventListener('click', clickOutside)
+    } else {
+        window.removeEventListener('click', clickOutside)
+    }
+})
+
+// watch theme change
 watch(theme, (value) => {
     switch (value) {
         case ThemeEnum.Light:
@@ -48,12 +59,19 @@ function applyModeChange(): void {
     }
 }
 
+function clickOutside(event) {
+    if (!event.composedPath().includes(menuButton.value)) {
+        displayMenu.value = false
+    }
+}
+
 onMounted(() => applyModeChange())
 </script>
 
 <template>
     <div class="dark:bg-gray-900">
         <div class="flex items-center gap-1 w-fit hover:cursor-pointer"
+             ref="menuButton"
              @click="displayMenu = !displayMenu">
             <ThemeLightIcon v-if="theme === ThemeEnum.Light" :highlighted="true"/>
             <ThemeDarkIcon v-if="theme === ThemeEnum.Dark" :highlighted="true"/>
