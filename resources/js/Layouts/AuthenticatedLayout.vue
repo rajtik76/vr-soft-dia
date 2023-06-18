@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
+import LocaleSwitch from "@/Components/LocaleSwitch.vue";
+import ThemeSwitch from "@/Components/ThemeSwitch.vue";
+import AppLogo from "@/Components/AppLogo.vue";
+import AppAlert from "@/Components/AppAlert.vue";
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -13,6 +16,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <AppAlert v-if="$page.props.alerts.success" class="py-4" :message="$page.props.alerts.success"/>
             <nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,23 +25,26 @@ const showingNavigationDropdown = ref(false);
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
-                                    />
+                                    <AppLogo class="w-16 h-16"/>
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    {{ $t('nav.dashboard') }}
+                                </NavLink>
+                                <NavLink :href="route('medicine.index')" :active="$page.component.startsWith('Medicine/')">
+                                    {{ $t('nav.medicine') }}
                                 </NavLink>
                             </div>
                         </div>
 
-                        <div class="hidden sm:flex sm:items-center sm:ml-6">
+                        <div class="hidden sm:flex sm:items-center sm:ml-6 gap-2">
+                            <ThemeSwitch class="dark:!bg-slate-800"/>
+                            <LocaleSwitch/>
                             <!-- Settings Dropdown -->
-                            <div class="ml-3 relative">
+                            <div>
                                 <Dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
@@ -64,9 +71,9 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
+                                        <DropdownLink :href="route('profile.edit')"> {{ $t('nav.profile') }} </DropdownLink>
                                         <DropdownLink :href="route('logout')" method="post" as="button">
-                                            Log Out
+                                            {{ $t('nav.logout') }}
                                         </DropdownLink>
                                     </template>
                                 </Dropdown>
@@ -113,7 +120,7 @@ const showingNavigationDropdown = ref(false);
                 >
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                            {{ $t('nav.dashboard') }}
                         </ResponsiveNavLink>
                     </div>
 
@@ -127,9 +134,9 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('profile.edit')"> {{ $t('nav.profile') }} </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
-                                Log Out
+                                {{ $t('nav.logout') }}
                             </ResponsiveNavLink>
                         </div>
                     </div>

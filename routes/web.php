@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LocaleSwitchController;
+use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -29,10 +31,19 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Locale switch
+Route::post('/locale-switch/{locale}', LocaleSwitchController::class)->name('locale-switch');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('/medicine', MedicineController::class)->except(['show']);
+
+    Route::prefix('/grid')->name('grid.')->group(function () {
+        Route::post('/medicine', \App\Http\Controllers\Grid\MedicineController::class)->name('medicine');
+    });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
