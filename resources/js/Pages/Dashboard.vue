@@ -31,8 +31,13 @@ defineProps<{
                     <MedicineIcon class="w-10 h-10 fill-white"/>
                 </template>
                 <template #default>
-                    <div v-for="medicine in medicines" :key="medicine.name" class="dark:text-slate-300 text-sm">
-                        {{ medicine.name }}
+                    <div v-if="medicines.length">
+                        <div v-for="medicine in medicines" :key="medicine.name" class="dark:text-slate-300 text-sm">
+                            {{ medicine.name }}
+                        </div>
+                    </div>
+                    <div v-else>
+                        {{ $t('dashboard.no_data_found') }}
                     </div>
                 </template>
             </DashboardWidget>
