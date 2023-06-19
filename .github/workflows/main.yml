@@ -41,7 +41,7 @@ jobs:
     - run: npm run build
     
     - name: Cache cleanup
-      run: rm -r storage/framework/cache
+      run: rm -rf storage/framework/cache
       
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
