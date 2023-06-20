@@ -62,7 +62,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+                <InputLabel for="password_confirmation" :value="$t('profile.update_password.confirm_password')" />
 
                 <TextInput
                     id="password_confirmation"
@@ -78,7 +78,7 @@ const submit = () => {
 
             <div class="flex items-center justify-end mt-4">
                 <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    {{ $t('base.reset_password') }}
+                    {{ $t('auth.reset_password.title') }}
                 </PrimaryButton>
             </div>
         </form>

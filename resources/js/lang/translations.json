@@ -112,7 +112,7 @@
                 "resend": "Znovu zaslat ověřovací email"
             },
             "reset_password": {
-                "title": "Obnovení hesla"
+                "title": "Obnovit heslo"
             },
             "forgot_password": {
                 "title": "Zapomněli jste heslo",
