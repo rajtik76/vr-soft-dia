@@ -16,7 +16,7 @@ createInertiaApp({
     setup({el, App, props, plugin}) {
         const i18n = createI18n({
             legacy: false, // you must set `false`, to use Composition API
-            locale: 'cs', // set locale
+            locale: 'en', // set locale
             fallbackLocale: 'en', // set fallback locale
             messages: translations, // set locale messages
         })

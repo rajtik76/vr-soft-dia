@@ -33,13 +33,13 @@ class DashboardController extends Controller
             'lowestReading' => ['date' => $lowestReading?->date->toDateString(), 'reading' => $lowestReading?->reading],
             'highestReading' => ['date' => $highestReading?->date->toDateString(), 'reading' => $highestReading?->reading],
             'chart' => [
-                'labels' => $chartData->map(fn(BloodSugarReading $item) => $item->date->toDateString()),
-                'beforeBreakfast' => $chartData->map(fn(BloodSugarReading $item) => $item->before_breakfast),
-                'afterBreakfast' => $chartData->map(fn(BloodSugarReading $item) => $item->after_breakfast),
-                'beforeLunch' => $chartData->map(fn(BloodSugarReading $item) => $item->before_lunch),
-                'afterLunch' => $chartData->map(fn(BloodSugarReading $item) => $item->after_lunch),
-                'beforeDinner' => $chartData->map(fn(BloodSugarReading $item) => $item->before_dinner),
-                'afterDinner' => $chartData->map(fn(BloodSugarReading $item) => $item->after_dinner),
+                'labels' => $chartData->map(fn (BloodSugarReading $item) => $item->date->toDateString()),
+                'beforeBreakfast' => $chartData->map(fn (BloodSugarReading $item) => $item->before_breakfast),
+                'afterBreakfast' => $chartData->map(fn (BloodSugarReading $item) => $item->after_breakfast),
+                'beforeLunch' => $chartData->map(fn (BloodSugarReading $item) => $item->before_lunch),
+                'afterLunch' => $chartData->map(fn (BloodSugarReading $item) => $item->after_lunch),
+                'beforeDinner' => $chartData->map(fn (BloodSugarReading $item) => $item->before_dinner),
+                'afterDinner' => $chartData->map(fn (BloodSugarReading $item) => $item->after_dinner),
             ],
         ]);
     }

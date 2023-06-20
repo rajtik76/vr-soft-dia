@@ -19,8 +19,8 @@ class MedicineRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('medicines', 'name')->where('user_id', auth()->id())->ignore($this->medicine?->id)
-            ]
+                Rule::unique('medicines', 'name')->where('user_id', auth()->id())->ignore($this->medicine?->id),
+            ],
         ];
     }
 

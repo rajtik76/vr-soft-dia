@@ -1,13 +1,21 @@
 {
     "cs": {
         "base": {
-            "name": "Název",
-            "submit": "Uložit",
+            "name": "Jméno",
+            "user_name": "Uživatelské jméno",
+            "submit": "Odeslat",
             "back": "Zpět",
             "actions": "Akce",
-            "edit": "Editace",
+            "edit": "Upravit",
             "delete": "Smazat",
-            "confirm": "Jsi si jistý?"
+            "confirm": "Jste si jisti?",
+            "password": "Heslo",
+            "remember_me": "Pamatuj si mě",
+            "log_in": "Přihlásit se",
+            "log_out": "Odhlásit se",
+            "save": "Uložit",
+            "saved": "Uloženo",
+            "cancel": "Zrušit"
         },
         "nav": {
             "login": "Přihlášení",
@@ -70,17 +78,72 @@
                 },
                 "graph": "posledních 7 hodnot měření"
             }
+        },
+        "profile": {
+            "information": {
+                "title": "Informace o profilu",
+                "description": "Aktualizujte informace o vašem účtu a emailovou adresu.",
+                "verified": {
+                    "message": "Vaše emailová adresa není ověřena.",
+                    "link": "Klikněte zde pro opětovné zaslání ověřovacího emailu.",
+                    "link_sent": "Na vaši emailovou adresu byl odeslán nový ověřovací odkaz."
+                }
+            },
+            "update_password": {
+                "title": "Aktualizovat heslo",
+                "description": "Zajistěte, aby váš účet používal dlouhé a náhodné heslo pro zajištění bezpečnosti.",
+                "current_password": "Současné heslo",
+                "new_password": "Nové heslo",
+                "confirm_password": "Potvrďte heslo"
+            },
+            "delete_user": {
+                "title": "Smazat účet",
+                "description": "Po smazání účtu budou všechny jeho prostředky a data trvale smazány. Před smazáním účtu si prosím stáhněte\n jakákoliv data nebo informace, které si přejete zachovat.",
+                "delete_account": "Smazat účet",
+                "are_you_sure": "Jste si jisti, že chcete smazat svůj účet?",
+                "warning_notice": "Po smazání účtu budou všechny jeho prostředky a data trvale smazány. Prosím,\n zadejte své heslo pro potvrzení, že chcete svůj účet trvale smazat."
+            }
+        },
+        "auth": {
+            "email_verification": {
+                "title": "Ověření emailu",
+                "description": "Děkujeme za registraci! Před začátkem prosím ověřte svou emailovou adresu kliknutím na odkaz,\n který jsme vám právě zaslali emailem. Pokud jste email neobdrželi, rádi vám pošleme další.",
+                "link_sent": "Na emailovou adresu, kterou jste uvedli při registraci, byl odeslán nový ověřovací odkaz.",
+                "resend": "Znovu zaslat ověřovací email"
+            },
+            "reset_password": {
+                "title": "Obnovení hesla"
+            },
+            "forgot_password": {
+                "title": "Zapomněli jste heslo",
+                "description": "Zapomněli jste heslo? Není problém. Dejte nám vědět vaši emailovou adresu a my vám zašleme odkaz na obnovení hesla,\n který vám umožní vybrat si nové heslo.",
+                "question": "Zapomněli jste heslo?",
+                "reset_link": "Poslat odkaz na obnovení hesla emailem"
+            },
+            "register": {
+                "title": "Registrace",
+                "confirm": "Potvrďte heslo",
+                "already_registered": "Již jste registrováni?"
+            }
         }
     },
     "en": {
         "base": {
             "name": "Name",
+            "user_name": "User name",
             "submit": "Submit",
             "back": "Back",
             "actions": "Actions",
             "edit": "Edit",
             "delete": "Delete",
-            "confirm": "Are you sure?"
+            "confirm": "Are you sure?",
+            "password": "Password",
+            "remember_me": "Remember me",
+            "log_in": "Log in",
+            "log_out": "Log out",
+            "save": "Save",
+            "saved": "Saved",
+            "cancel": "Cancel"
         },
         "nav": {
             "login": "Login",
@@ -142,6 +205,53 @@
                     "high": "Highest value"
                 },
                 "graph": "last 7 blood sugar readings"
+            }
+        },
+        "profile": {
+            "information": {
+                "title": "Profile information",
+                "description": "Update your account's profile information and email address.",
+                "verified": {
+                    "message": "Your email address is unverified.",
+                    "link": "Click here to re-send the verification email.",
+                    "link_sent": "A new verification link has been sent to your email address."
+                }
+            },
+            "update_password": {
+                "title": "Update Password",
+                "description": "Ensure your account is using a long, random password to stay secure.",
+                "current_password": "Current Password",
+                "new_password": "New Password",
+                "confirm_password": "Confirm Password"
+            },
+            "delete_user": {
+                "title": "Delete Account",
+                "description": "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting\n your account, please download any data or information that you wish to retain.",
+                "delete_account": "Delete Account",
+                "are_you_sure": "Are you sure you want to delete your account?",
+                "warning_notice": "Once your account is deleted, all of its resources and data will be permanently deleted. Please\n enter your password to confirm you would like to permanently delete your account."
+            }
+        },
+        "auth": {
+            "email_verification": {
+                "title": "Email Verification",
+                "description": "Thanks for signing up! Before getting started, could you verify your email address by clicking on the link\n we just emailed to you? If you didn't receive the email, we will gladly send you another.",
+                "link_sent": "A new verification link has been sent to the email address you provided during registration.",
+                "resend": "Resend Verification Email"
+            },
+            "reset_password": {
+                "title": "Reset Password"
+            },
+            "forgot_password": {
+                "title": "Forgot Password",
+                "description": "Forgot your password? No problem. Just let us know your email address and we will email you a password reset\n link that will allow you to choose a new one.",
+                "question": "Forgot your password?",
+                "reset_link": "Email password reset link"
+            },
+            "register": {
+                "title": "Register",
+                "confirm": "Confirm Password",
+                "already_registered": "Already registered?"
             }
         }
     }

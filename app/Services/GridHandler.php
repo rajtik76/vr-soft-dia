@@ -14,24 +14,29 @@ use JsonSerializable;
 class GridHandler implements JsonSerializable
 {
     protected int $page;
+
     protected int $perPage = 10;
+
     protected array $sort = [];
+
     protected array $filter = [];
+
     protected string|null $search;
+
     protected Builder $builder;
+
     protected string|null $resource = null;
+
     protected array $sortClosure = [];
+
     protected array $searchClosure = [];
+
     protected array $filterClosure = [];
 
     public function __construct(protected Request $request)
     {
     }
 
-    /**
-     * @param string $resource
-     * @return GridHandler
-     */
     public function setResource(string $resource): GridHandler
     {
         $this->resource = $resource;
@@ -66,7 +71,6 @@ class GridHandler implements JsonSerializable
 
         return $this;
     }
-
 
     public function jsonSerialize(): array
     {
@@ -103,7 +107,7 @@ class GridHandler implements JsonSerializable
                 if ($this->filter) {
                     collect($this->filter)
                         ->filter(
-                            fn ($filter) => !(is_null($filter) || $filter === '')
+                            fn ($filter) => ! (is_null($filter) || $filter === '')
                         )
                         ->each(
                             fn (string $value, string $column) => Arr::has($this->filterClosure, $column)

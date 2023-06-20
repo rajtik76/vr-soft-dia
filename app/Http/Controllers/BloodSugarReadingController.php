@@ -33,8 +33,8 @@ class BloodSugarReadingController extends Controller
                 'before_lunch' => 0,
                 'after_lunch' => 0,
                 'before_dinner' => 0,
-                'after_dinner' => 0
-            ]))
+                'after_dinner' => 0,
+            ])),
         ]);
     }
 
@@ -43,7 +43,7 @@ class BloodSugarReadingController extends Controller
         $this->authorize('update', $bloodSugarReading);
 
         return inertia('BloodSugarReading/Edit', [
-            'reading' => BloodSugarReadingResource::make($bloodSugarReading)
+            'reading' => BloodSugarReadingResource::make($bloodSugarReading),
         ]);
     }
 

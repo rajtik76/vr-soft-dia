@@ -13,7 +13,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class BloodSugarReadingResource extends JsonResource
 {
     /**
-     * @param Request $request
      * @return array{
      *     id: int,
      *     date: Carbon,

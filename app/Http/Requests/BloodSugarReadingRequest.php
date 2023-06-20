@@ -32,7 +32,7 @@ class BloodSugarReadingRequest extends FormRequest
             'after_lunch' => ['numeric', 'min:0'],
             'before_dinner' => ['numeric', 'min:0'],
             'after_dinner' => ['numeric', 'min:0'],
-            'note' => ['nullable', 'string', 'max:255']
+            'note' => ['nullable', 'string', 'max:255'],
         ];
     }
 
@@ -50,7 +50,7 @@ class BloodSugarReadingRequest extends FormRequest
                         trans('validation.custom.before_breakfast.sum')
                     );
                 }
-            }
+            },
         ];
     }
 

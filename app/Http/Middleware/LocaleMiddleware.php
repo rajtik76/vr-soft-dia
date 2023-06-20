@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 
-class SetLocaleMiddleware
+class LocaleMiddleware
 {
-    private const DEFAULT_LOCALE = 'cs';
-
     public function handle(Request $request, Closure $next)
     {
-        app()->setLocale(session()->get('locale', self::DEFAULT_LOCALE));
+        if ($request->cookie('locale')) {
+            app()->setLocale($request->cookie('locale'));
+        }
 
         return $next($request);
     }

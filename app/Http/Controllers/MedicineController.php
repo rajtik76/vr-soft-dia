@@ -26,14 +26,14 @@ class MedicineController extends Controller
     public function create(): Response
     {
         return inertia('Medicine/Create', [
-            'medicine' => MedicineResource::make(new Medicine())
+            'medicine' => MedicineResource::make(new Medicine()),
         ]);
     }
 
     public function edit(Medicine $medicine): Response
     {
         return inertia('Medicine/Edit', [
-            'medicine' => $medicine
+            'medicine' => $medicine,
         ]);
     }
 

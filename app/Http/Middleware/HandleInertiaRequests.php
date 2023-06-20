@@ -32,7 +32,7 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         return array_merge(parent::share($request), [
-            'locale' => session('locale', app()->getLocale()),
+            'locale' => $request->cookie('locale', app()->getLocale()),
             'auth' => [
                 'user' => $request->user(),
             ],
@@ -42,8 +42,8 @@ class HandleInertiaRequests extends Middleware
                 ]);
             },
             'alerts' => [
-                'success' => Session::get('success')
-            ]
+                'success' => Session::get('success'),
+            ],
         ]);
     }
 }
