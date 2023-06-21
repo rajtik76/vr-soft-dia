@@ -1,66 +1,76 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 style="text-align: center;">Diabetes Tracker</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<p style="text-align: center;">
+<img src="https://dia.vr-soft.eu/build/assets/dia-logo-128-f8818097.png" alt="diabetes-tracker">
 </p>
 
-## About Laravel
+This repository contains the source code for a demo project, Diabetes Tracker, which serves as a blood sugar value
+tracking system.  
+The project allows users to register, confirm their email, and utilize various functionalities for managing their
+diabetes-related data.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- User Registration: New users can sign up by providing their necessary details and creating an account. Upon
+  registration, a confirmation email is sent to verify the user's email address.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Forgot Password: Users who have forgotten their password can request a password reset. An email will be sent with
+  instructions on how to reset their password securely.
 
-## Learning Laravel
+- Medication Tracking: Users can keep track of their medications.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Blood Sugar Tracking: Users can record their blood sugar values before and after meals, including breakfast, lunch,
+  and dinner. By tracking these values, users can monitor their blood sugar levels and make informed decisions about
+  their dietary choices.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- Dashboard: The dashboard provides users with a comprehensive overview of their diabetes-related data. It displays the
+  lowest and highest recorded blood sugar values, a summary of their medication, and a graphical representation of the
+  last seven blood sugar readings.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation
 
-## Laravel Sponsors
+1. Clone the repository:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+git clone https://github.com/rajtik76/vr-soft-dia.git
+```
 
-### Premium Partners
+2. Navigate to the project directory:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```bash
+cd vr-soft-dia
+```
 
-## Contributing
+3. Install the project dependencies:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install && npm install
+```
 
-## Code of Conduct
+- Or you can use Laravel Sail service
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4. Configure the project:
 
-## Security Vulnerabilities
+- Rename the .env.example file to .env.
+- Update the required environment variables in the .env file, such as database credentials and email configuration.
+- compile frontend assets
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+npm run build
+```
 
-## License
+5. Run migrations and seeder:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan migrate --seed
+```
+
+## Technologies Used
+
+- Frontend: HTML, TailwindCSS, Vite, Vue, TypeScript, Inertia.js
+- Backend: Laravel 10
+- Database: MySQL
+
+## Contact
+
+If you have any questions, suggestions, or feedback, feel free to reach out to us at [admin@vr-soft.eu](mailto:admin@vr-soft.eu)
