@@ -4,7 +4,7 @@
 <img src="https://dia.vr-soft.eu/build/assets/dia-logo-128-f8818097.png" alt="diabetes-tracker">
 </p>
 
-This repository contains the source code for a demo project, Diabetes Tracker, which serves as a blood sugar value
+This repository contains the source code for a [demo project](https://dia.vr-soft.eu), Diabetes Tracker, which serves as a blood sugar value
 tracking system.  
 The project allows users to register, confirm their email, and utilize various functionalities for managing their
 diabetes-related data.
