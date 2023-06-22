@@ -1,5 +1,6 @@
 {
     "cs": {
+        "cookie_banner": "Tento web využívá pouze cookies, které jsou nezbytné pro správné fungování stránek a poskytování základních funkcí. Tato cookies neukládají žádné osobní informace.\n\nPokračováním v používání našeho webu vyjadřujete souhlas s použitím těchto nezbytných cookies.\n\nPokud nechcete povolit tyto cookies, můžete změnit nastavení svého prohlížeče tak, aby nepřijímal cookies, nebo opustit náš web.\n\nDěkujeme za vaše porozumění.\n",
         "base": {
             "name": "Jméno",
             "user_name": "Uživatelské jméno",
@@ -15,7 +16,8 @@
             "log_out": "Odhlásit se",
             "save": "Uložit",
             "saved": "Uloženo",
-            "cancel": "Zrušit"
+            "cancel": "Zrušit",
+            "close": "Zavřít"
         },
         "nav": {
             "login": "Přihlášení",
@@ -128,6 +130,7 @@
         }
     },
     "en": {
+        "cookie_banner": "This website uses necessary cookies that are essential for the proper functioning of the site and providing basic functionality.\nThese cookies do not store any personal information. By continuing to use our website, you consent to the use of these necessary cookies.\nIf you do not wish to allow these cookies, you can change your browser settings to disable cookies or exit our website.\nThank you for your understanding.",
         "base": {
             "name": "Name",
             "user_name": "User name",
@@ -143,7 +146,8 @@
             "log_out": "Log out",
             "save": "Save",
             "saved": "Saved",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "close": "Close"
         },
         "nav": {
             "login": "Login",

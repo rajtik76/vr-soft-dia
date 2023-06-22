@@ -3,6 +3,7 @@ import {Head, Link} from '@inertiajs/vue3';
 import LightDarkModeSwitch from "@/Components/ThemeSwitch.vue";
 import LocaleSwitch from "@/Components/LocaleSwitch.vue";
 import AppLogo from "@/Components/AppLogo.vue";
+import AppLayout from "@/Layouts/AppLayout.vue";
 
 defineProps<{
     canLogin?: boolean;
@@ -13,90 +14,92 @@ defineProps<{
 </script>
 
 <template>
-    <Head title="Welcome"/>
+    <AppLayout>
+        <Head title="Welcome"/>
 
-    <div
-        class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"
-    >
-        <div class="flex items-center gap-4 sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-            <LightDarkModeSwitch/>
-            <LocaleSwitch/>
-            <div v-if="canLogin">
-                <Link
-                    v-if="$page.props.auth.user"
-                    :href="route('dashboard')"
-                    class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                >
-                    {{ $t('nav.dashboard') }}
-                </Link>
-
-                <template v-else>
+        <div
+            class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white"
+        >
+            <div class="flex items-center gap-4 sm:fixed sm:top-0 sm:right-0 p-6 text-right">
+                <LightDarkModeSwitch/>
+                <LocaleSwitch/>
+                <div v-if="canLogin">
                     <Link
-                        :href="route('login')"
+                        v-if="$page.props.auth.user"
+                        :href="route('dashboard')"
                         class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                     >
-                        {{ $t('nav.login') }}
+                        {{ $t('nav.dashboard') }}
                     </Link>
-                    <Link
-                        v-if="canRegister"
-                        :href="route('register')"
-                        class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                    >
-                        {{ $t('nav.register') }}
-                    </Link>
-                </template>
-            </div>
-        </div>
 
-        <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-                <AppLogo class="pulse"/>
-            </div>
-
-            <div class="text-gray-500 dark:text-gray-400">
-                <h3 class="mt-8 py-4 text-2xl lg:text-5xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-br dark:from-red-400 dark:to-gray-200 from-red-500 to-violet-500">
-                    {{ $t('facts.0') }}
-                </h3>
-
-                <div class="mt-12 text-base lg:text-lg">
-                    <div v-for="index in [1,2,3,4,5,6,7,8,9,10]" :key="`fact-${index}`" class="fact-item">
-                        <span class="fact-number">{{ index }}.</span> {{ $t(`facts.${index}`) }}
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer -->
-            <div class="flex justify-center mt-16 sm:items-center sm:justify-between">
-                <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
-                    <div class="flex items-center gap-4">
-                        <a
-                            class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                            href="https://vr-soft.eu"
+                    <template v-else>
+                        <Link
+                            :href="route('login')"
+                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                         >
-                            <svg
-                                class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400"
-                                fill="none"
-                                stroke-width="1.5"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                />
-                            </svg>
-                            VR Soft
-                        </a>
+                            {{ $t('nav.login') }}
+                        </Link>
+                        <Link
+                            v-if="canRegister"
+                            :href="route('register')"
+                            class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                        >
+                            {{ $t('nav.register') }}
+                        </Link>
+                    </template>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto p-6 lg:p-8">
+                <div class="flex justify-center">
+                    <AppLogo class="pulse"/>
+                </div>
+
+                <div class="text-gray-500 dark:text-gray-400">
+                    <h3 class="mt-8 py-4 text-2xl lg:text-5xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-br dark:from-red-400 dark:to-gray-200 from-red-500 to-violet-500">
+                        {{ $t('facts.0') }}
+                    </h3>
+
+                    <div class="mt-12 text-base lg:text-lg">
+                        <div v-for="index in [1,2,3,4,5,6,7,8,9,10]" :key="`fact-${index}`" class="fact-item">
+                            <span class="fact-number">{{ index }}.</span> {{ $t(`facts.${index}`) }}
+                        </div>
                     </div>
                 </div>
 
-                <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                    Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
+                <!-- Footer -->
+                <div class="flex justify-center mt-16 sm:items-center sm:justify-between">
+                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
+                        <div class="flex items-center gap-4">
+                            <a
+                                class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                href="https://vr-soft.eu"
+                            >
+                                <svg
+                                    class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400"
+                                    fill="none"
+                                    stroke-width="1.5"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                VR Soft
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
+                        Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </AppLayout>
 </template>
 
 <style scoped>
