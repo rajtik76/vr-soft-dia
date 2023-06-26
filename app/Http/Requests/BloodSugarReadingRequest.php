@@ -12,7 +12,7 @@ use Illuminate\Validation\Validator;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @property-read BloodSugarReading $bloodSugarReading
+ * @property-read BloodSugarReading | null $bloodSugarReading
  * @property-read float $before_breakfast
  * @property-read float $after_breakfast
  * @property-read float $before_lunch

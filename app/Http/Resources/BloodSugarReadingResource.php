@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Http\Resources;
 
 use App\Models\BloodSugarReading;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,7 +14,7 @@ class BloodSugarReadingResource extends JsonResource
     /**
      * @return array{
      *     id: int,
-     *     date: Carbon,
+     *     date: string,
      *     before_breakfast: float,
      *     after_breakfast: float,
      *     before_lunch: float,
@@ -39,8 +38,8 @@ class BloodSugarReadingResource extends JsonResource
             'before_dinner' => $this->before_dinner,
             'after_dinner' => $this->after_dinner,
             'note' => $this->note,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'created_at' => $this->created_at?->toDateTimeString(),
+            'updated_at' => $this->updated_at?->toDateTimeString(),
         ];
     }
 }

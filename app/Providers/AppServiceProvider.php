@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Success redirect response macro
         RedirectResponse::macro('withSuccess', function (string $value): RedirectResponse {
+            /** @var RedirectResponse $this */
             return $this->with('success', $value);
         });
     }
