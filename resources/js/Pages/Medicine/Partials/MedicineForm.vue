@@ -44,12 +44,12 @@ const submit = () => {
         </div>
 
         <div class="flex items-center justify-between mt-8">
+            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                {{ $t('base.submit') }}
+            </PrimaryButton>
             <PrimaryButton :class="{ 'opacity-25': form.processing }"
                            @click.prevent="router.get(route('medicine.index'))">
                 {{ $t('base.back') }}
-            </PrimaryButton>
-            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                {{ $t('base.submit') }}
             </PrimaryButton>
         </div>
     </form>
