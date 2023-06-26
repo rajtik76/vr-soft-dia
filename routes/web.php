@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BloodSugarReadingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Grid\Admin\UserListController;
 use App\Http\Controllers\Grid\BloodSugarReadingsController;
 use App\Http\Controllers\Grid\MedicinesController;
 use App\Http\Controllers\LocaleSwitchController;
@@ -37,6 +38,7 @@ Route::get('/dashboard', DashboardController::class)->middleware(['auth', 'verif
 Route::post('/locale-switch/{locale}', LocaleSwitchController::class)->name('locale-switch');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/admin/dashboard', \App\Http\Controllers\Admin\DashboardController::class)->name('admin.dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -45,9 +47,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('/bloodSugarReading', BloodSugarReadingController::class)->except(['show']);
 
     Route::prefix('/grid')->name('grid.')->group(function () {
+        Route::post('/admin/users', UserListController::class)->name('admin.users');
         Route::post('/medicines', MedicinesController::class)->name('medicines');
         Route::post('/bloodSugarReadings', BloodSugarReadingsController::class)->name('bloodSugarReadings');
     });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

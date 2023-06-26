@@ -44,6 +44,10 @@ const showingNavigationDropdown = ref(false);
                                              :href="route('bloodSugarReading.index')">
                                         {{ $t('nav.blood_sugar_reading') }}
                                     </NavLink>
+                                    <NavLink v-if="$page.props.auth.user.admin" :active="$page.component.startsWith('Admin/')"
+                                             :href="route('admin.dashboard')">
+                                        {{ $t('nav.admin') }}
+                                    </NavLink>
                                 </div>
                             </div>
 
